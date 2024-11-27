@@ -19,7 +19,7 @@ def load_from_images(device: Literal['cuda'] | Literal['mps'] | Literal['cpu']):
         # transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
 
-    dataset = datasets.ImageFolder('datasets/3d-printer-defected-dataset', transform=transform)
+    dataset = datasets.ImageFolder('datasets/v2_balanced_images_cropped_top_half', transform=transform)
 
     dataloader = torch.utils.data.DataLoader(
         dataset, 
