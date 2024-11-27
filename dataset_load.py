@@ -11,8 +11,12 @@ def load_from_images(device: Literal['cuda'] | Literal['mps'] | Literal['cpu']):
     from torchvision import datasets, transforms
 
     transform = transforms.Compose([
-        transforms.Resize((256, 192)),
+        # transforms.Resize((256, 192)),
+        # transforms.Resize((32, 32)),
+        transforms.Resize((224, 224)),
+        # transforms.Resize(224),
         transforms.ToTensor(),
+        # transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
 
     dataset = datasets.ImageFolder('datasets/3d-printer-defected-dataset', transform=transform)
